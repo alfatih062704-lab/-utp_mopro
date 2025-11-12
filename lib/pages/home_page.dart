@@ -3,24 +3,33 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  Widget _placeholderBox({double? height, double? width}) {
+    return Container(
+      height: height ?? 100,
+      width: width ?? double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        color: Colors.white,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
+      appBar: AppBar(title: const Text('Home (Wireframe Style)')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        padding: const EdgeInsets.all(16),
+        child: ListView(
           children: [
-            Container(
-              height: 150,
-              width: double.infinity,
-              color: Colors.grey[300],
-              child: const Center(child: Icon(Icons.image, size: 50)),
-            ),
+            _placeholderBox(height: 150),
             const SizedBox(height: 20),
+            _placeholderBox(height: 20, width: 120),
+            const SizedBox(height: 10),
+            _placeholderBox(height: 20, width: 180),
+            const SizedBox(height: 30),
+            _placeholderBox(height: 100),
+            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/detail'),
               child: const Text('Ke Halaman Detail'),
