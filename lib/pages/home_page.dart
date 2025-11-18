@@ -30,14 +30,23 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 30),
             _placeholderBox(height: 100),
             const SizedBox(height: 30),
+
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/detail'),
               child: const Text('Ke Halaman Detail'),
             ),
             const SizedBox(height: 10),
+
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/profile'),
               child: const Text('Ke Halaman Profil'),
+            ),
+            const SizedBox(height: 10),
+
+            // ⭐ TOMBOL BARU UNTUK MENU MAKANAN
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, '/menu'),
+              child: const Text('Ke Menu Makanan'),
             ),
           ],
         ),
